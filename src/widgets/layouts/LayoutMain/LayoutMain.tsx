@@ -9,14 +9,12 @@ interface LayoutMainProps {
 
 export const LayoutMain: FC<LayoutMainProps> = ({children}) => {
     return (
-        <html>
-        <body>
-        <Header/>
-        <Main>
-            {children}
-        </Main>
-        <Footer/>
-        </body>
-        </html>
+        <>
+            <Header/>
+            <Main>
+                {children}
+            </Main>
+            <Footer/>
+        </>
     )
 }

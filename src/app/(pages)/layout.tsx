@@ -1,6 +1,12 @@
 import {ReactNode} from "react";
 import "@/assets/styles/globals.scss"
 import {LayoutMain} from "@/widgets";
+import { Work_Sans } from 'next/font/google';
+
+const workSans = Work_Sans({
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 export const metadata = {
     title: 'Create Next App',
@@ -13,10 +19,12 @@ export default function RootLayout({
     children: ReactNode
 }) {
     return (
-        <html lang="en">
+        <html lang="en" className={workSans.className}>
+        <body>
         <LayoutMain>
             {children}
         </LayoutMain>
+        </body>
         </html>
     )
 }
