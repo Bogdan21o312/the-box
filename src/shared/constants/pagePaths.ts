@@ -1,0 +1,6 @@
+export const HOME_PAGE_URL = '/'
+export const ABOUT_US_PAGE_URL = '/about'
+export const PROJECTS_PAGE_URL = '/projects'
+export const PROJECT_PAGE_URL = '/project'
+export const SERVICES_PAGE_URL = '/services'
+export const CONTACT_US_PAGE_URL = '/contact'

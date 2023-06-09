@@ -1,7 +1,7 @@
 import {ReactNode} from "react";
 import "@/assets/styles/globals.scss"
 import {LayoutMain} from "@/widgets";
-import { Work_Sans } from 'next/font/google';
+import {Work_Sans} from 'next/font/google';
 
 const workSans = Work_Sans({
     subsets: ['latin'],

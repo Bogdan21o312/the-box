@@ -1,5 +1,21 @@
 @import "src/assets/styles/style";
 
 .header {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  transition: all 0.3s ease 0s;
+  background-color: $ColorWhite;
+  @include adaptiveValue("padding-top", 16, 12);
+  @include adaptiveValue("padding-bottom", 16, 12);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
 
 }
