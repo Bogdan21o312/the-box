@@ -1,5 +1,5 @@
 // Hooks
-export {useDeviceType, useMediaQuery} from "./hooks"
+export {useDeviceType} from "./hooks"
 
 // Helpers
 

@@ -1,28 +1,12 @@
-'use client'
-import {useState, useLayoutEffect} from 'react';
+import {ReadonlyHeaders} from "next/dist/server/web/spec-extension/adapters/headers";
+import {regexMobileType, regexTabletType} from "@/shared";
 
-export const useDeviceType = () => {
-    const [isMobile, setIsMobile] = useState<boolean>();
-    const [isTablet, setIsTablet] = useState<boolean>();
+export const useDeviceType = (headers: () => ReadonlyHeaders) => {
+    const userAgent = headers().get('user-agent')
 
-    useLayoutEffect(() => {
-        function checkDeviceType() {
-            const userAgent = navigator.userAgent;
-            const isMobileDevice = /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(userAgent);
-            const isTabletDevice = /iPad/i.test(userAgent);
+    const isMobile: boolean = !!userAgent && regexMobileType.test(userAgent);
+    const isTablet: boolean = !!userAgent && regexTabletType.test(userAgent);
+    const isTouchDevice: boolean = isMobile || isTablet;
 
-            setIsMobile(isMobileDevice);
-            setIsTablet(isTabletDevice);
-        }
-
-        checkDeviceType();
-
-        window.addEventListener('resize', checkDeviceType);
-
-        return () => {
-            window.removeEventListener('resize', checkDeviceType);
-        };
-    }, []);
-
-    return {isMobile, isTablet};
+    return {isMobile, isTablet, isTouchDevice};
 }

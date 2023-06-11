@@ -1,13 +1,11 @@
 import classes from "./Header.module.scss"
 import {IconLogo} from "@/assets";
 import {Menu} from "./Menu";
-import {Container} from "@/shared";
+import {Container, useDeviceType} from "@/shared";
 import {headers} from "next/headers";
 
 export const Header = () => {
-    const userAgent = headers().get('user-agent')!.match(
-        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
-    );
+    const {isTouchDevice} = useDeviceType(headers)
     return (
         <header className={classes.header}>
             <Container>
@@ -15,7 +13,7 @@ export const Header = () => {
                     <div className={classes.logo}>
                         <IconLogo/>
                     </div>
-                    <Menu isMobileView={userAgent}/>
+                    <Menu isTouchDevice={isTouchDevice}/>
                 </div>
             </Container>
         </header>

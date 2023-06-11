@@ -1,11 +1,13 @@
 'use client'
-import {MenuMobile} from "@/widgets/layouts/LayoutMain/Header/Menu/MenuMobile";
-import {MenuItems} from "@/widgets/layouts/LayoutMain/Header/Menu/components";
+import {FC} from "react";
+import {TypeDevice} from "@/shared";
+import {MenuMobile} from "./MenuMobile";
+import {MenuItems} from "./components";
 
-export const Menu = ({isMobileView}) => {
+export const Menu:FC<TypeDevice> = ({isTouchDevice}) => {
     return (
         <nav>
-            {isMobileView ? <MenuMobile /> : <MenuItems />}
+            {isTouchDevice ? <MenuMobile /> : <MenuItems />}
         </nav>
     );
 };
