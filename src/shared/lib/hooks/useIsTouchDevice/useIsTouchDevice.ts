@@ -1,24 +1,23 @@
-import {useLayoutEffect, useState} from 'react'
-import {isAndroid, isIPad13, isIPhone13, isWinPhone, isMobileSafari, isTablet} from "react-device-detect"
+import { useEffect } from 'react'
 
-function isTouchDevice() {
-    if (typeof window === 'undefined') return false
-    const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
-    function mq(query: string) {
-        return typeof window !== 'undefined' && window.matchMedia(query).matches
+const getMobileDetect = (userAgent: NavigatorID['userAgent']) => {
+    const isAndroid = () => Boolean(userAgent.match(/Android/i))
+    const isIos = () => Boolean(userAgent.match(/iPhone|iPad|iPod/i))
+    const isOpera = () => Boolean(userAgent.match(/Opera Mini/i))
+    const isWindows = () => Boolean(userAgent.match(/IEMobile/i))
+    const isSSR = () => Boolean(userAgent.match(/SSR/i))
+    const isMobile = () => Boolean(isAndroid() || isIos() || isOpera() || isWindows())
+    const isDesktop = () => Boolean(!isMobile() && !isSSR())
+    return {
+        isMobile,
+        isDesktop,
+        isAndroid,
+        isIos,
+        isSSR,
     }
-    // if ('ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)) return true
-    const query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('')
-    return mq(query)
 }
-
-export function useIsTouchDevice() {
-    const [isTouch, setIsTouch] = useState(false)
-    // перед заватаженням сторінки а useEffect - спрацьовує після render
-    useLayoutEffect(() => {
-        setIsTouch(isTouch || isAndroid || isIPad13 || isIPhone13 || isWinPhone || isMobileSafari || isTablet || isTouchDevice())
-    }, [])
-
-    return isTouch
+export const useIsTouchDevice = () => {
+    useEffect(() => {}, [])
+    const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent
+    return getMobileDetect(userAgent)
 }
-2

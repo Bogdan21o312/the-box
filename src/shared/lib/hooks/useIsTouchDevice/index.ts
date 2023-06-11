@@ -1,4 +1,4 @@
-import {useIsTouchDevice} from "./useIsTouchDevice.ts"
+import {useIsTouchDevice} from "./useIsTouchDevice"
 
 export {
     useIsTouchDevice
