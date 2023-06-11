@@ -4,6 +4,8 @@ import {regexMobileType, regexTabletType} from "@/shared";
 export const useDeviceType = (headers: () => ReadonlyHeaders) => {
     const userAgent = headers().get('user-agent')
 
+    console.log(userAgent)
+
     const isMobile: boolean = !!userAgent && regexMobileType.test(userAgent);
     const isTablet: boolean = !!userAgent && regexTabletType.test(userAgent);
     const isTouchDevice: boolean = isMobile || isTablet;

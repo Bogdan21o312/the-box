@@ -13,7 +13,7 @@ export const Header = () => {
                     <div className={classes.logo}>
                         <IconLogo/>
                     </div>
-                    <Menu isTouchDevice={isTouchDevice}/>
+                    <Menu isTouchDevice={isTouchDevice} />
                 </div>
             </Container>
         </header>
