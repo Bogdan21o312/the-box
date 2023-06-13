@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import "@/assets/styles/globals.scss"
+import "@/shared/assets/styles/globals.scss"
 import {LayoutMain} from "@/widgets";
 import {Work_Sans} from 'next/font/google';
 

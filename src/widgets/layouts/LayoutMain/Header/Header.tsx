@@ -1,5 +1,5 @@
 import classes from "./Header.module.scss"
-import {IconLogo} from "@/assets";
+import {IconLogo} from "../../../../shared/assets";
 import {Menu} from "./Menu";
 import {Container, useDeviceType} from "@/shared";
 import {headers} from "next/headers";

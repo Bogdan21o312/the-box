@@ -10,7 +10,8 @@ export {
 // UI
 export {
     Container,
-    Preloader
+    Preloader,
+    Text
 } from "./UI"
 
 // Lib

@@ -1,0 +1,74 @@
+@use "sass:math";
+@import "src/shared/assets/styles/style";
+
+// Main ====================================================================================================
+
+.main {
+  @include adaptiveValue("font-size", 20, 16);
+  line-height: math.div(23, 20);
+  font-weight: 400;
+}
+
+// Center ====================================================================================================
+
+.center {
+  text-align: center;
+}
+
+// Color ====================================================================================================
+
+.colorMainSecondary {
+  color: $ColorMainSecondary;
+}
+
+.colorOrange {
+  color: $ColorOrange;
+}
+
+.colorBluePrimary {
+  color: $ColorBluePrimary;
+}
+
+.colorBlueSecondary {
+  color: $ColorBlueSecondary;
+}
+
+.colorRed {
+  color: $ColorRed;
+}
+
+.colorWhite {
+  color: $ColorWhite;
+}
+
+// Type ====================================================================================================
+
+.titleImmense {
+  @include adaptiveValue("font-size", 72, 58);
+  font-weight: 600;
+  line-height: math.div(84, 72);
+}
+
+.titleBig {
+  @include adaptiveValue("font-size", 36, 32);
+  line-height: math.div(42, 36);
+  font-weight: 700;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.titleSmall {
+  @include adaptiveValue("font-size", 18, 14);
+  line-height: math.div(21, 18);
+}
+
+.textBig {
+
+}
+
+.textSmall {
+  @include adaptiveValue("font-size", 16, 13);
+  line-height: math.div(19, 16);
+}

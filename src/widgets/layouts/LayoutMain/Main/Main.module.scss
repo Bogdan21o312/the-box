@@ -1,5 +1,8 @@
-@import "src/assets/styles/style";
+@import "src/shared/assets/styles/style";
 
 .main {
-  color: red;
+  padding-top: rem(100);
+  @media (max-width: em(991.98)) {
+    padding-top: rem(80);
+  }
 }
