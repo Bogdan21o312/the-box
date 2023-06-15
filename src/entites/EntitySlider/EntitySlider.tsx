@@ -1,24 +1,13 @@
 "use client"
-import {FC, MouseEvent, TouchEvent, useState} from "react"
+import {Children, FC, MouseEvent, TouchEvent, useState} from "react"
 import classes from "./EntitySlider.module.scss"
 import {EntitySliderProps} from "./EntitySliderProps";
 
-const slides = [
-    {
-        title: "1"
-    },
-    {
-        title: "2"
-    },
-    {
-        title: "3"
-    }
-]
-export const EntitySlider: FC<EntitySliderProps> = () => {
+export const EntitySlider: FC<EntitySliderProps> = ({children}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStartX, setDragStartX] = useState(0);
-
+    const slides = Children.toArray(children);
     const handleSlideChange = (dragOffset: number) => {
         if (dragOffset > 20) {
             handlePrevSlide();
@@ -79,7 +68,7 @@ export const EntitySlider: FC<EntitySliderProps> = () => {
                         key={index}
                         className={`${classes.slide} ${index === currentSlide ? classes.active : ""} ${index < currentSlide ? classes.left : ""} ${index > currentSlide ? classes.right : ""}`}
                     >
-                        {slide.title}
+                        {slide}
                     </div>
                 ))}
             </div>
