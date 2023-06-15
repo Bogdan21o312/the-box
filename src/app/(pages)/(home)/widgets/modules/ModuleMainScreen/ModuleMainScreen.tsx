@@ -92,65 +92,66 @@ export const ModuleMainScreen = () => {
             </button>
 
             <style jsx>{`
-        .slider {
-          position: relative;
-          width: 100%;
-          height: 300px;
-          overflow: hidden;
-        }
+              .slider {
+                position: relative;
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                touch-action: pan-y;
+              }
 
-        .slides-container {
-          display: flex;
-          transition: all 0.6s ease;
-          transform: translateX(-${currentSlide * 100}%);
-        }
+              .slides-container {
+                display: flex;
+                transition: all 0.6s ease;
+                transform: translateX(-${currentSlide * 100}%);
+              }
 
-        .slide {
-          flex-shrink: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #f1f1f1;
-          font-size: 24px;
-          color: #333;
-          transition: all 0.6s ease;
-        }
+              .slide {
+                flex-shrink: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #f1f1f1;
+                font-size: 24px;
+                color: #333;
+                transition: all 0.6s ease;
+              }
 
-        .slide.active {
-          background-color: #ddd;
-        }
+              .slide.active {
+                //background-color: #ddd;
+              }
 
-        .slide.left {
-          transform: translateX(-100%);
-        }
+              .slide.left {
+                left: -100%
+              }
 
-        .slide.right {
-          transform: translateX(100%);
-        }
+              .slide.right {
+                left: 100%
+              }
 
-        .prev-button,
-        .next-button {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          padding: 8px 16px;
-          background-color: #333;
-          color: #fff;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
+              .prev-button,
+              .next-button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 8px 16px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+              }
 
-        .prev-button {
-          left: 16px;
-        }
+              .prev-button {
+                left: 16px;
+              }
 
-        .next-button {
-          right: 16px;
-        }
-      `}</style>
+              .next-button {
+                right: 16px;
+              }
+            `}</style>
         </div>
     );
 };
