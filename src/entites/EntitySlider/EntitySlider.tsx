@@ -48,10 +48,6 @@ export const EntitySlider: FC<EntitySliderProps> = () => {
         handleSlideChange(dragOffset);
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
-    };
-
     const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
         setIsDragging(true);
         setDragStartX(event.touches[0].clientX);
@@ -63,7 +59,7 @@ export const EntitySlider: FC<EntitySliderProps> = () => {
         handleSlideChange(dragOffset);
     };
 
-    const handleTouchEnd = () => {
+    const handleDragEnd = () => {
         setIsDragging(false);
     };
 
@@ -71,10 +67,10 @@ export const EntitySlider: FC<EntitySliderProps> = () => {
         <div className={classes.slider}>
             <div onMouseDown={handleMouseDown}
                  onMouseMove={handleMouseMove}
-                 onMouseUp={handleMouseUp}
+                 onMouseUp={handleDragEnd}
                  onTouchStart={handleTouchStart}
                  onTouchMove={handleTouchMove}
-                 onTouchEnd={handleTouchEnd}
+                 onTouchEnd={handleDragEnd}
                  className={classes.slidesContainer}
                  style={{transform: `translateX(-${currentSlide * 100}%)`}}
             >
