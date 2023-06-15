@@ -34,10 +34,11 @@ export const ModuleMainScreen = () => {
     const handleMouseMove = (e) => {
         if (!isDragging) return;
         const dragOffset = e.clientX - dragStartX;
-        if (dragOffset > 100) {
+        console.log(dragOffset)
+        if (dragOffset > 20) {
             handlePrevSlide();
             setIsDragging(false);
-        } else if (dragOffset < -100) {
+        } else if (dragOffset < -20) {
             handleNextSlide();
             setIsDragging(false);
         }
@@ -47,9 +48,32 @@ export const ModuleMainScreen = () => {
         setIsDragging(false);
     };
 
+    const handleTouchStart = (e) => {
+        setIsDragging(true);
+        setDragStartX(e.touches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDragging) return;
+        const dragOffset = e.touches[0].clientX - dragStartX;
+        if (dragOffset > 20) {
+            handlePrevSlide();
+            setIsDragging(false);
+        } else if (dragOffset < -20) {
+            handleNextSlide();
+            setIsDragging(false);
+        }
+    };
+
+    const handleTouchEnd = () => {
+        setIsDragging(false);
+    };
+
     return (
-        <div className="slider" onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-            <div className="slides-container">
+        <div className="slider">
+            <div onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onTouchStart={handleTouchStart}
+                 onTouchMove={handleTouchMove}
+                 onTouchEnd={handleTouchEnd} className="slides-container">
                 {slides.map((slide, index) => (
                     <div
                         key={index}
