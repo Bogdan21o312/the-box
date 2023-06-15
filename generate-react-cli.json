@@ -50,8 +50,8 @@
       "customTemplates": {
         "component": "generate-react-cli/Entity/EntityTemplateName.tsx",
         "style": "generate-react-cli/Entity/EntityTemplateName.module.scss",
-        "index": "templates/Entity/index.ts",
-        "type": "generate-react-cli-react-cli/Entity/EntityTemplateNameProps.ts"
+        "index": "generate-react-cli/Entity/index.ts",
+        "type": "generate-react-cli/Entity/EntityTemplateNameProps.ts"
       },
       "path": "src/entites",
       "withStyle": true,
