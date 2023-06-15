@@ -19,6 +19,16 @@ export const EntitySlider: FC<EntitySliderProps> = () => {
     const [isDragging, setIsDragging] = useState(false);
     const [dragStartX, setDragStartX] = useState(0);
 
+    const handleSlideChange = (dragOffset: number) => {
+        if (dragOffset > 20) {
+            handlePrevSlide();
+            setIsDragging(false);
+        } else if (dragOffset < -20) {
+            handleNextSlide();
+            setIsDragging(false);
+        }
+    };
+
     const handleNextSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
     };
@@ -35,13 +45,7 @@ export const EntitySlider: FC<EntitySliderProps> = () => {
         if (!isDragging) return;
         const dragOffset = event.clientX - dragStartX;
         console.log(dragOffset)
-        if (dragOffset > 20) {
-            handlePrevSlide();
-            setIsDragging(false);
-        } else if (dragOffset < -20) {
-            handleNextSlide();
-            setIsDragging(false);
-        }
+        handleSlideChange(dragOffset);
     };
 
     const handleMouseUp = () => {
@@ -56,13 +60,7 @@ export const EntitySlider: FC<EntitySliderProps> = () => {
     const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
         if (!isDragging) return;
         const dragOffset = event.touches[0].clientX - dragStartX;
-        if (dragOffset > 20) {
-            handlePrevSlide();
-            setIsDragging(false);
-        } else if (dragOffset < -20) {
-            handleNextSlide();
-            setIsDragging(false);
-        }
+        handleSlideChange(dragOffset);
     };
 
     const handleTouchEnd = () => {
