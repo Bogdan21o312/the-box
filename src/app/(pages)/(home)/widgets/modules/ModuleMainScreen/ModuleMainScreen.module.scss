@@ -15,25 +15,38 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 16.58%, rgba(255, 255, 255, 0) 72.38%);
+    @media (max-width: em(1100)){
+      background: linear-gradient(170deg, rgba(255, 255, 255, 0.9) 16.58%, rgba(255, 255, 255, 0) 72.38%);
+    }
   }
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 .title {
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translate(0,-50%);
+  transform: translate(0, -50%);
   z-index: 2;
   display: flex;
   align-items: center;
   max-width: rem(556);
-  @include adaptiveValue("margin-left", 112, 20);
-  //@include adaptiveValue("padding-top", 240, 20);
-  //@include adaptiveValue("padding-bottom", 240, 20);
-
+  @include adaptiveValue("margin-left", 112, 20, 0,1920, 1110);
+  @media (max-width: em(1100)) {
+    position: relative;
+    top: initial;
+    transform: initial;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    padding-right: rem(10);
+    padding-left: rem(10);
+  }
 }
 
 .presentationViewer {
@@ -41,4 +54,10 @@
   z-index: 5;
   bottom: 0;
   right: 0;
+  @media (max-width: em(1100)) {
+    position: relative;
+    bottom: 0;
+    right: initial;
+    margin-top: auto;
+  }
 }

@@ -2,8 +2,10 @@
 
 .main {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .includingHeaders {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - $headerHeight);
 }

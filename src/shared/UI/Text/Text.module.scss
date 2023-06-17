@@ -44,7 +44,7 @@
 // Type ====================================================================================================
 
 .titleImmense {
-  @include adaptiveValue("font-size", 72, 58);
+  @include adaptiveValue("font-size", 72, 45);
   font-weight: 600;
   line-height: math.div(84, 72);
 }

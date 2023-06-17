@@ -3,12 +3,15 @@
 .main {
   max-width: rem(416);
   background-color: $ColorBluePrimary;
+  @media (max-width: em(1100)){
+    max-width: initial;
+  }
 }
 
 .blockText {
   @include adaptiveValue("padding-top", 20, 18);
-  @include adaptiveValue("margin-right", 58, 50);
-  @include adaptiveValue("margin-left", 58, 50);
+  @include adaptiveValue("margin-right", 58, 10);
+  @include adaptiveValue("margin-left", 58, 10);
 }
 
 .blockTextItem {

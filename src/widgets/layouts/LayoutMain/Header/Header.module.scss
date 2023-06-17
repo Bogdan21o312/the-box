@@ -6,8 +6,8 @@
   z-index: 50;
   transition: all 0.3s ease 0s;
   background-color: $ColorWhite;
-  @include adaptiveValue("padding-top", 15, 12);
-  @include adaptiveValue("padding-bottom", 15, 12);
+  padding-top: rem(15);
+  padding-bottom: rem(15);
   max-height: $headerHeight;
   min-height: $headerHeight;
 }
