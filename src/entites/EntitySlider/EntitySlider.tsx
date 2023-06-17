@@ -3,22 +3,20 @@ import { Children, FC, MouseEvent, TouchEvent, useState } from "react";
 import classes from "./EntitySlider.module.scss";
 import { EntitySliderProps } from "./EntitySliderProps";
 
-export const EntitySlider: FC<EntitySliderProps> = ({ children, slidesToShow = 1, baseButtons, currentSlideCustom, setCurrentSlideCustom  }) => {
+export const EntitySlider: FC<EntitySliderProps> = ({ children, slidesToShow = 1, baseButtons  }) => {
     const slides = Children.toArray(children);
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStartX, setDragStartX] = useState(0);
 
-    const isCurrentSlide = typeof currentSlideCustom === "number"? currentSlideCustom : currentSlide
-
     const handleSlideChange = (dragOffset: number) => {
         if (dragOffset > 20) {
             handlePrevSlide();
-            setCurrentSlide(false);
+            setIsDragging(false);
         } else if (dragOffset < -20) {
             handleNextSlide();
-            setCurrentSlide(false);
+            setIsDragging(false);
         }
     };
 
@@ -70,12 +68,12 @@ export const EntitySlider: FC<EntitySliderProps> = ({ children, slidesToShow = 1
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleDragEnd}
                 className={classes.slidesContainer}
-                style={{ transform: `translateX(-${isCurrentSlide * (100 / slidesToShow)}%)` }}
+                style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}
             >
                 {slides.map((slide, index) => (
                     <div
                         key={index}
-                        className={`${classes.slide} ${index >= isCurrentSlide && index < isCurrentSlide + slidesToShow ? classes.active : ""}`}
+                        className={`${classes.slide} ${index >= currentSlide && index < currentSlide + slidesToShow ? classes.active : ""}`}
                         style={{ flexBasis: getSlideWidth() }}
                     >
                         {slide}

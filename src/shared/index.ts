@@ -28,3 +28,7 @@ export {
 // Types
 
 export type {TypeDevice} from "./types"
+
+// Assets
+
+export {IconArrow, IconLogo} from "./assets"

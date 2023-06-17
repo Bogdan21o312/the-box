@@ -7,44 +7,27 @@ export const Text: FC<TextProps> = ({children, type, color, center, elementType}
     // Element Type
     const TagName = elementType || "div";
 
-    // Main
-    const classMain = classes.main
-    const classesText = [classMain]
+    // Array classes
+    const classesText = [classes.main]
 
     // Center
-    const classCenter = classes.center
-
-    center && classesText.push(classCenter)
+    center && classesText.push(classes.center)
 
     // Type
-    const classTitleImmense = classes.titleImmense
-    const classTitleBig = classes.titleBig
-    const classTitle = classes.title
-    const classTitleSmall = classes.titleSmall
-    const classTextBig = classes.textBig
-    const classTextSmall = classes.textSmall
-
-    type === "titleImmense" && classesText.push(classTitleImmense)
-    type === "titleBig" && classesText.push(classTitleBig)
-    type === "title" && classesText.push(classTitle)
-    type === "titleSmall" && classesText.push(classTitleSmall)
-    type === "textBig" && classesText.push(classTextBig)
-    type === "textSmall" && classesText.push(classTextSmall)
+    type === "titleImmense" && classesText.push(classes.titleImmense)
+    type === "titleBig" && classesText.push(classes.titleBig)
+    type === "title" && classesText.push(classes.title)
+    type === "titleSmall" && classesText.push(classes.titleSmall)
+    type === "textBig" && classesText.push(classes.textBig)
+    type === "textSmall" && classesText.push(classes.textSmall)
 
     // Color
-    const classColorMainSecondary = classes.colorMainSecondary
-    const classColorOrange = classes.colorOrange
-    const classColorBluePrimary = classes.colorBluePrimary
-    const classColorBlueSecondary = classes.colorBlueSecondary
-    const classColorRed = classes.colorRed
-    const classColorWhite = classes.colorWhite
-
-    color === "mainSecondary" && classesText.push(classColorMainSecondary)
-    color === "orange" && classesText.push(classColorOrange)
-    color === "bluePrimary" && classesText.push(classColorBluePrimary)
-    color === "blueSecondary" && classesText.push(classColorBlueSecondary)
-    color === "red" && classesText.push(classColorRed)
-    color === "white" && classesText.push(classColorWhite)
+    color === "mainSecondary" && classesText.push(classes.colorMainSecondary)
+    color === "orange" && classesText.push(classes.colorOrange)
+    color === "bluePrimary" && classesText.push(classes.colorBluePrimary)
+    color === "blueSecondary" && classesText.push(classes.colorBlueSecondary)
+    color === "red" && classesText.push(classes.colorRed)
+    color === "white" && classesText.push(classes.colorWhite)
 
     return (
         <TagName className={classesText.join(' ')}>

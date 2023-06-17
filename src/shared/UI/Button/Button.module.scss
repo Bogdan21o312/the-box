@@ -1,0 +1,32 @@
+@import "src/shared/assets/styles/style";
+
+.main {
+  @include adaptiveValue("padding-top", 16, 12);
+  @include adaptiveValue("padding-bottom", 16, 12);
+  @include adaptiveValue("padding-right", 20, 18);
+  @include adaptiveValue("padding-left", 20, 18);
+  @include adaptiveValue("font-size", 18, 16);
+  font-weight: 500;
+  background-color: $ColorMainPrimary;
+  color: $ColorWhite;
+  transition: all 0.3s ease 0s;
+  .icon {
+    path,
+    svg {
+      fill: $ColorWhite !important;
+    }
+  }
+}
+
+.secondary {
+  .icon {
+    path,
+    svg {
+      fill: $ColorBluePrimary !important;
+    }
+  }
+}
+
+.rotateIcon {
+  transform: rotate(180deg);
+}
