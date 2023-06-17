@@ -2,30 +2,45 @@
 @import "src/shared/assets/styles/style";
 
 .mobileMenu {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   right: -100%;
+  width: 100%;
+  min-height: 100%;
   transition: all 0.3s ease 0s;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  align-items: end;
+  flex-wrap: nowrap;
+  overflow: auto;
+  padding-top: $headerHeight;
   background-color: $ColorBluePrimary;
-  margin-top: rem(50);
-  padding-top: rem(20);
 
   &::after {
     content: "";
-    position: absolute;
+    transition: all 0.3s ease 0s;
+    position: fixed;
     top: 0;
     right: -100%;
+    height: $headerHeight;
     width: 100%;
-    //background-color: $ColorBluePrimary;
-    height: 100%;
+    background-color: $ColorWhite;
   }
 
+  ul {
+
+  }
+  li {
+    &:first-child {
+      margin-top: rem(15);
+    }
+  }
   a {
+    display: block;
     font-size: rem(40);
     color: $ColorWhite;
+    padding-top: rem(10);
+    padding-bottom: rem(10);
   }
 
   &.mobileMenuOpen {
@@ -34,11 +49,6 @@
     &::after {
       right: 0;
     }
-  }
-
-  @media (max-width: $tablet) {
-    align-items: end;
-    padding-top: rem(10);
   }
 }
 

@@ -1,6 +1,6 @@
 import classes from "./Header.module.scss"
 import {Menu} from "./Menu";
-import {IconLogo, useDeviceType} from "@/shared";
+import {IconLogo, IconLogoMini, useDeviceType} from "@/shared";
 import {headers} from "next/headers";
 import {EntityContainer} from "@/entites"
 export const Header = () => {
@@ -10,7 +10,7 @@ export const Header = () => {
             <EntityContainer>
                 <div className={classes.content}>
                     <div className={classes.logo}>
-                        <IconLogo/>
+                        {isTouchDevice? <IconLogoMini/> : <IconLogo/>}
                     </div>
                     <Menu isTouchDevice={isTouchDevice} />
                 </div>

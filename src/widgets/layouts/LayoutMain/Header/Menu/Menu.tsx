@@ -6,8 +6,8 @@ import {MenuItems} from "./components";
 
 export const Menu:FC<TypeDevice> = ({isTouchDevice}) => {
     return (
-        <nav>
-            {isTouchDevice ? <MenuMobile /> : <MenuItems />}
-        </nav>
+            <nav>
+                {isTouchDevice ? <MenuMobile /> : <MenuItems />}
+            </nav>
     );
 };

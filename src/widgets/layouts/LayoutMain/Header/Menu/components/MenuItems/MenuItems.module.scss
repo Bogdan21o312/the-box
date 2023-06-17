@@ -3,6 +3,7 @@
 .list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   @include adaptiveValue("gap", 40, 15, 0, 1920, 991);
 }
 
@@ -18,8 +19,5 @@
     &:hover {
       color: $ColorOrange;
     }
-  }
-  @media (max-width: em(991.98)) {
-    font-size: rem(40);
   }
 }
