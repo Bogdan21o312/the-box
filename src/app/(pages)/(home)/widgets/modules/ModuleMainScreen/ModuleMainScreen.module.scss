@@ -1,0 +1,48 @@
+@import "src/shared/assets/styles/style";
+
+.section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 16.58%, rgba(255, 255, 255, 0) 72.38%);
+  }
+}
+
+.ibg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.content {
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  max-width: rem(556);
+  @include adaptiveValue("margin-left", 112, 20);
+  //@include adaptiveValue("padding-top", 240, 20);
+  //@include adaptiveValue("padding-bottom", 240, 20);
+
+}
+
+.presentationViewer {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+}

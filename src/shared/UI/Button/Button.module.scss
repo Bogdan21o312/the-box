@@ -1,6 +1,10 @@
 @import "src/shared/assets/styles/style";
 
 .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include adaptiveValue("gap", 10, 8);
   @include adaptiveValue("padding-top", 16, 12);
   @include adaptiveValue("padding-bottom", 16, 12);
   @include adaptiveValue("padding-right", 20, 18);
@@ -29,4 +33,9 @@
 
 .rotateIcon {
   transform: rotate(180deg);
+}
+
+
+.oneHundredPercentWidth {
+  width: 100%;
 }

@@ -1,0 +1,38 @@
+@import "src/shared/assets/styles/style";
+
+.main {
+  max-width: rem(416);
+  background-color: $ColorBluePrimary;
+}
+
+.blockText {
+  @include adaptiveValue("padding-top", 20, 18);
+  @include adaptiveValue("margin-right", 58, 50);
+  @include adaptiveValue("margin-left", 58, 50);
+}
+
+.blockTextItem {
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 20, 16);
+  }
+
+  &:last-child {
+    @include adaptiveValue("margin-bottom", 26, 20);
+  }
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: $ColorWhite;
+    height: 100%;
+    width: rem(1);
+  }
+}

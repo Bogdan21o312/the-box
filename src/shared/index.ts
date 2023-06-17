@@ -11,7 +11,9 @@ export {
 export {
     Container,
     Preloader,
-    Text
+    Text,
+    Button,
+    Ibg
 } from "./UI"
 
 // Lib

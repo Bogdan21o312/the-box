@@ -1,8 +1,8 @@
 @import "src/shared/assets/styles/style";
 
 .main {
-  padding-top: rem(100);
+  padding-top: rem(80);
   @media (max-width: em(991.98)) {
-    padding-top: rem(80);
+    padding-top: rem(75);
   }
 }
