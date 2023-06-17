@@ -1,0 +1,13 @@
+@import "src/shared/assets/styles/style";
+
+.main {
+
+}
+
+.paddingTop {
+  @include adaptiveValue("padding-top", 120, 60);
+}
+
+.paddingBottom {
+  @include adaptiveValue("padding-bottom", 120, 60);
+}

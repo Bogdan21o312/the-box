@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include adaptiveValue("gap", 10, 8);
+  @include adaptiveValue("gap", 12, 10);
   @include adaptiveValue("padding-top", 16, 12);
   @include adaptiveValue("padding-bottom", 16, 12);
   @include adaptiveValue("padding-right", 20, 18);
@@ -14,10 +14,34 @@
   background-color: $ColorMainPrimary;
   color: $ColorWhite;
   transition: all 0.3s ease 0s;
+
+  span {
+    transition: all 0.3s ease 0s;
+  }
+
   .icon {
     path,
     svg {
+      display: block;
+      transition: fill 0.3s ease 0s;
       fill: $ColorWhite !important;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $ColorWhite;
+
+      span {
+        color: $ColorMainPrimary;
+      }
+
+      .icon {
+        path,
+        svg {
+          fill: $ColorMainPrimary !important;
+        }
+      }
     }
   }
 }

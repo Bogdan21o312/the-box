@@ -12,6 +12,7 @@ export const EntitySlider: FC<EntitySliderProps> = ({ children, slidesToShow = 1
 
     const handleSlideChange = (dragOffset: number) => {
         if (dragOffset > 20) {
+            console.log(dragOffset)
             handlePrevSlide();
             setIsDragging(false);
         } else if (dragOffset < -20) {

@@ -9,11 +9,12 @@ export {
 
 // UI
 export {
-    Container,
     Preloader,
     Text,
     Button,
-    Ibg
+    Ibg,
+    FullScreen,
+    Section
 } from "./UI"
 
 // Lib
@@ -29,7 +30,7 @@ export {
 
 // Types
 
-export type {TypeDevice} from "./types"
+export type {TypeDevice, TypeIbg} from "./types"
 
 // Assets
 

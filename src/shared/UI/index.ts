@@ -1,5 +1,6 @@
-export {Container} from "./Container"
 export {Preloader} from "./Preloader"
 export {Text} from "./Text"
 export {Ibg} from "./Ibg"
 export {Button} from "./Button"
+export {FullScreen} from "./FullScreen"
+export {Section} from "./Section"

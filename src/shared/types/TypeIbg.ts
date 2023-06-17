@@ -1,7 +1,7 @@
 import {StaticImageData} from "next/image";
 
-export interface IbgProps {
+export type TypeIbg = {
     src: string | StaticImageData
     alt: string
-    modClass: string
+    modClass: string | string[]
 }

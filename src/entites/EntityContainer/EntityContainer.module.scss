@@ -1,6 +1,16 @@
 @use "sass:math";
 @import "src/shared/assets/styles/style";
 
+.ibg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+// Container ====================================================================================================
+
 @if ($responsiveType==1) {
   // Чуйна
   .container {

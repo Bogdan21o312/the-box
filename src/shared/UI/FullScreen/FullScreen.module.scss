@@ -1,0 +1,9 @@
+@import "src/shared/assets/styles/style";
+
+.main {
+  min-height: 100vh;
+}
+
+.includingHeaders {
+  min-height: calc(100vh - 80px);
+}

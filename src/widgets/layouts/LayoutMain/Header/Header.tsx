@@ -1,21 +1,20 @@
 import classes from "./Header.module.scss"
-import {IconLogo} from "../../../../shared/assets";
 import {Menu} from "./Menu";
-import {Container, useDeviceType} from "@/shared";
+import {IconLogo, useDeviceType} from "@/shared";
 import {headers} from "next/headers";
-
+import {EntityContainer} from "@/entites"
 export const Header = () => {
     const {isTouchDevice} = useDeviceType(headers)
     return (
         <header className={classes.header}>
-            <Container>
+            <EntityContainer>
                 <div className={classes.content}>
                     <div className={classes.logo}>
                         <IconLogo/>
                     </div>
                     <Menu isTouchDevice={isTouchDevice} />
                 </div>
-            </Container>
+            </EntityContainer>
         </header>
     )
 }

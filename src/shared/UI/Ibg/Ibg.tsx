@@ -1,13 +1,13 @@
 import Image from "next/image";
 import classes from "./Ibg.module.scss";
 import { FC } from "react";
-import { IbgProps } from "./IbgProps";
+import {TypeIbg} from "@/shared";
 
-export const Ibg: FC<IbgProps> = ({ src, alt, modClass }) => {
+export const Ibg: FC<TypeIbg> = ({ src, alt, modClass }) => {
 
     return (
         <div className={`${classes.clIbg} ${modClass}`}>
-            <Image src={src} alt={alt} />
+            <Image src={src!} alt={alt!} />
         </div>
     );
 };
