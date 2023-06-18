@@ -1,0 +1,54 @@
+@import "src/shared/assets/styles/style";
+
+.body {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  max-width: rem(1214);
+  margin: 0 auto;
+  @media (max-width: em(1220)){
+    flex-direction: column;
+  }
+}
+
+.image {
+  position: absolute;
+  left: 0;
+
+  img {
+    width: 100%;
+    object-position: top;
+  }
+
+  @media (max-width: em(1220)) {
+    position: static;
+  }
+}
+
+.content {
+  @include adaptiveValue("margin-top", 70, 30);
+  @include adaptiveValue("margin-bottom", 70, 30);
+  position: relative;
+  z-index: 5;
+  background-color: $ColorBluePrimary;
+  @include adaptiveValue("padding-top", 50, 40);
+  @include adaptiveValue("padding-bottom", 50, 40);
+  @include adaptiveValue("padding-right", 40, 30);
+  @include adaptiveValue("padding-left", 40, 30);
+  max-width: rem(488);
+
+}
+
+.title {
+  @include adaptiveValue("margin-bottom", 40, 20);
+}
+
+.text {
+  &:not(:last-child) {
+    margin-bottom: rem(15);
+  }
+}
+
+.button {
+  @include adaptiveValue("margin-top", 40, 20);
+}

@@ -5,9 +5,9 @@
 }
 
 .paddingTop {
-  @include adaptiveValue("padding-top", 120, 60);
+  @include adaptiveValue("padding-top", 40, 20);
 }
 
 .paddingBottom {
-  @include adaptiveValue("padding-bottom", 120, 60);
+  @include adaptiveValue("padding-bottom", 40, 20);
 }

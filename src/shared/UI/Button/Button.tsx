@@ -1,8 +1,8 @@
-import {FC} from "react"
+import {ButtonHTMLAttributes, FC} from "react"
 import classes from "./Button.module.scss"
 import {ButtonProps} from "./ButtonProps";
 
-export const Button: FC<ButtonProps> = ({children, variant, iconRight, iconLeft, oneHundredPercentWidth, rotateIcon}) => {
+export const Button: FC<ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>> = ({children, variant, iconRight, iconLeft, oneHundredPercentWidth, rotateIcon, ...otherProps}) => {
 
     // Array classes button
     const classesButton = [classes.main]
@@ -18,7 +18,7 @@ export const Button: FC<ButtonProps> = ({children, variant, iconRight, iconLeft,
     rotateIcon && classesIcon.push(classes.rotateIcon)
 
     return (
-        <button className={classesButton.join(' ')}>
+        <button className={classesButton.join(' ')} {...otherProps}>
             {iconLeft && <div className={classesIcon.join(' ')}>{iconLeft}</div>}
             <span>{children}</span>
             {iconRight && <div className={classesIcon.join(' ')}>{iconRight}</div>}

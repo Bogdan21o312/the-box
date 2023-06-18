@@ -1,8 +1,12 @@
-import {ModuleMainScreen} from "./widgets";
+import {ModuleMainScreen, ModuleAdvantages, ModuleAbout} from "./widgets";
 
 export default function Home() {
 
-  return (
-      <ModuleMainScreen/>
-  )
+    return (
+        <>
+            <ModuleMainScreen/>
+            <ModuleAdvantages/>
+            <ModuleAbout/>
+        </>
+    )
 }

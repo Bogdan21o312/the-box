@@ -34,4 +34,4 @@ export type {TypeDevice, TypeIbg} from "./types"
 
 // Assets
 
-export {IconArrow, IconLogo, IconLogoMini} from "./assets"
+export {IconArrow, IconLogo, IconLogoMini, IconTools} from "./assets"

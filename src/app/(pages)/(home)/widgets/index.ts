@@ -1,1 +1,1 @@
-export {ModuleMainScreen} from "./modules"
+export {ModuleMainScreen, ModuleAdvantages, ModuleAbout} from "./modules"
