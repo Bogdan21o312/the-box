@@ -6,7 +6,7 @@ import imageSrc from "public/image.jpg"
 import {EntityPresentationViewer} from "./entites";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {useState} from "react";
-import SwiperCore, { Controller } from 'swiper';
+import SwiperCore, {Controller} from 'swiper';
 SwiperCore.use([Controller]);
 export const ModuleMainScreen = () => {
     const [firstSwiper, setFirstSwiper] = useState<null | any>(null);
@@ -18,7 +18,6 @@ export const ModuleMainScreen = () => {
             <EntityContainer nonRetreat>
                 <Swiper
                     loop={true}
-                    parallax={true}
                     onSwiper={setFirstSwiper}
                     controller={{ control: secondSwiper }}
                 >

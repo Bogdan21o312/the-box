@@ -3,13 +3,11 @@ import {IconArrow, Text, Button} from "@/shared";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperType, Navigation} from 'swiper';
 import {useRef} from "react";
+import {
+    EntityPresentationViewerProps
+} from "./EntityPresentationViewerProps";
 
-type Ttpe = {
-    setSecondSwiper: (swiper: null | any) => void
-    firstSwiper: null
-}
-
-export const EntityPresentationViewer = ({setSecondSwiper, firstSwiper}:Ttpe) => {
+export const EntityPresentationViewer = ({setSecondSwiper, firstSwiper}: EntityPresentationViewerProps) => {
     const swiperRef = useRef<SwiperType>();
 
     return (
@@ -20,7 +18,6 @@ export const EntityPresentationViewer = ({setSecondSwiper, firstSwiper}:Ttpe) =>
                     swiperRef.current = swiper;
                 }}
                 loop={true}
-                parallax={true}
                 onSwiper={setSecondSwiper} controller={{control: firstSwiper}}
             >
                 <SwiperSlide>
