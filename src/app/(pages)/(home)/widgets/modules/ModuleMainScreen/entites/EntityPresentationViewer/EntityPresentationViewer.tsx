@@ -1,26 +1,63 @@
 import classes from "./EntityPresentationViewer.module.scss"
 import {IconArrow, Text, Button} from "@/shared";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper as SwiperType, Navigation} from 'swiper';
+import {useRef} from "react";
 
-export const EntityPresentationViewer = () => {
+type Ttpe = {
+    setSecondSwiper: (swiper: null | any) => void
+    firstSwiper: null
+}
+
+export const EntityPresentationViewer = ({setSecondSwiper, firstSwiper}:Ttpe) => {
+    const swiperRef = useRef<SwiperType>();
+
     return (
         <div className={classes.main}>
-            <div className={classes.blockText}>
-                <div className={classes.blockTextItem}>
-                    <Text type={"title"} color={'white'} center>
-                        Feature Projects
-                    </Text>
-                </div>
-                <div className={classes.blockTextItem}>
-                    <Text color={'white'} center>
-                        The National University of Architecture
-                    </Text>
-                </div>
-            </div>
+            <Swiper
+                modules={[Navigation]}
+                onBeforeInit={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
+                loop={true}
+                parallax={true}
+                onSwiper={setSecondSwiper} controller={{control: firstSwiper}}
+            >
+                <SwiperSlide>
+                    <div className={classes.blockText}>
+                        <div className={classes.blockTextItem}>
+                            <Text type={"title"} color={'white'} center>
+                                Feature Projects 01
+                            </Text>
+                        </div>
+                        <div className={classes.blockTextItem}>
+                            <Text color={'white'} center>
+                                The National University of Architecture
+                            </Text>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={classes.blockText}>
+                        <div className={classes.blockTextItem}>
+                            <Text type={"title"} color={'white'} center>
+                                Feature Projects 02
+                            </Text>
+                        </div>
+                        <div className={classes.blockTextItem}>
+                            <Text color={'white'} center>
+                                The National University of Architecture
+                            </Text>
+                        </div>
+                    </div>
+                </SwiperSlide>
+            </Swiper>
             <div className={classes.buttons}>
-                <Button iconLeft={<IconArrow/>} oneHundredPercentWidth>
+                <Button onClick={() => swiperRef.current?.slidePrev()} iconLeft={<IconArrow/>} oneHundredPercentWidth>
                     Back
                 </Button>
-                <Button iconRight={<IconArrow/>} rotateIcon oneHundredPercentWidth>
+                <Button onClick={() => swiperRef.current?.slideNext()} iconRight={<IconArrow/>} rotateIcon
+                        oneHundredPercentWidth>
                     Next
                 </Button>
             </div>
