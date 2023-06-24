@@ -5,8 +5,7 @@ export default function Home() {
 
     return (
         <>
-            <ImageUploader/>
-            {/*<ModuleMainScreen/>*/}
+            <ModuleMainScreen/>
             <ModuleAdvantages/>
             <ModuleAbout/>
         </>
