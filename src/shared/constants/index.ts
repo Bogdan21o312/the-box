@@ -5,3 +5,6 @@ export {
 
 // Regex
 export {regexTabletType, regexMobileType} from "./regex"
+
+// API url
+export {API_URL, BASE_API_URL} from "./api-url"
