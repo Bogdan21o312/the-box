@@ -7,12 +7,12 @@ import {EntityPresentationViewer} from "./entites";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {useState} from "react";
 import SwiperCore, {Controller} from 'swiper';
+import { getMainSlider } from "./services";
 SwiperCore.use([Controller]);
-export const ModuleMainScreen = () => {
+export function ModuleMainScreen () {
     const [firstSwiper, setFirstSwiper] = useState<null | any>(null);
     const [secondSwiper, setSecondSwiper] = useState<null | any>(null);
-
-
+    const data = getMainSlider()
     return (
         <Section withoutTopPadding>
             <EntityContainer nonRetreat>
