@@ -1,10 +1,10 @@
-import { API_URL } from "@/shared";
 import axios from "axios";
+import {Response} from "./type";
 
-export async function getMainSlider() {
+export async function getMainSlider(): Promise<Response> {
     try {
-        const response = await axios.get(`${API_URL}main-sliders?populate=*`, { params: { next: { revalidate: 10 } } });
-        return response.data;
+        const response = await fetch(`http://localhost:1337/api/main-sliders?populate=*`, { next: { revalidate: 10 } });
+        return response.json();
     } catch (error) {
         throw new Error('Failed to fetch data');
     }

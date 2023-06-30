@@ -1,7 +1,5 @@
-import {StaticImageData} from "next/image";
-
 export type TypeIbg = {
-    src: string | StaticImageData
+    src: string
     alt: string
     modClass: string | string[]
 }
